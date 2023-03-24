@@ -1,7 +1,7 @@
-import 'package:e_shopping_app/layout/screens/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'constants/bloc_observer.dart';
+import 'layout/screens/auth screen/signup_screen.dart';
 
 void main() {
   Bloc.observer = SimpleBlocObserver();
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Poppins'),
       home: SignUpScreen(),
     );
   }

@@ -28,20 +28,21 @@ class RegisterCubit extends Cubit<RegisterState> {
         'image': 'gg',
       }
       );
-      if( response.statusCode == 200){
-        var data = jsonDecode(response.body);
-        if( data[state] == true){
-          debugPrint('Response is : $data');
+        var responseBody = jsonDecode(response.body);
+        if( responseBody['status'] == true){
+          debugPrint('Response is : $responseBody');
           emit(RegisterSuccessState());
         }else {
-          debugPrint('Response is : $data');
-          emit(RegisterFailureState());
+          debugPrint('Response is : $responseBody');
+          emit(RegisterFailureState(
+            message: responseBody['message']
+          ));
         }
 
-      }
     }   catch (e) {
       // TODO
-      emit(RegisterFailureState());
+      debugPrint("Failed to Register , reason : $e");
+      emit(RegisterFailureState(message: e.toString()));
     }
   }
 }
