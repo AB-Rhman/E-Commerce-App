@@ -127,6 +127,12 @@ class _LoginScreenState extends State<LoginScreen> {
                           const SizedBox(
                             height: 8,
                           ),
+                          /*-------------------login information------------------
+
+                           email: abdelrahman_testing911@gmail.com
+                           pass: 123456
+
+                           ------------------------------------------------------*/
                           AuthBottom(
                               authText: 'LOGIN',
                               onPressed: () {

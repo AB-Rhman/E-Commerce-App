@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+String? token;
+
 // first color list
 Color mainColor = const Color(0xffDB3022);
 Color backgroundColor = const Color(0xFFE5E5E5);

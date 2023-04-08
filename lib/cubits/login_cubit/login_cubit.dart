@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
+import 'package:e_shopping_app/constants/local_network.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
@@ -23,6 +24,7 @@ class LoginCubit extends Cubit<LoginState> {
 
       if (responseBody['status'] == true) {
         debugPrint("User login success and his Data is : $responseBody");
+        await CacheNetwork.insertToCache(key: "token", value: responseBody['data']['token']);
         emit(LoginSuccessState());
       } else {
         debugPrint("Failed to login, reason is : ${responseBody['message']}");
