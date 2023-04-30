@@ -4,22 +4,22 @@ import 'package:flutter/material.dart';
 class SimpleBlocObserver implements BlocObserver {
   @override
   void onChange(BlocBase bloc, Change change) {
-    // TODO: implement onChange
+    print('onChange ==> ${bloc.runtimeType}');
   }
 
   @override
   void onClose(BlocBase bloc) {
-    // TODO: implement onClose
+    print('onClose ==> ${bloc.runtimeType}');
   }
 
   @override
   void onCreate(BlocBase bloc) {
-    // TODO: implement onCreate
+    print('onCreate ==> ${bloc.runtimeType}');
   }
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    // TODO: implement onError
+    print('onError ==> ${bloc.runtimeType}, $error');
   }
 
   @override
