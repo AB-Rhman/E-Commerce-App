@@ -94,7 +94,7 @@ class ProductCardItem extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       height: 1.2125,
                       color: Color(0xFF0074D9),
-
+                      decoration: TextDecoration.lineThrough
                     ),
                     overflow: TextOverflow.ellipsis,
 
